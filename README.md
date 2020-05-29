@@ -1,7 +1,10 @@
-# Wordpress-service
+# Docker environments
 
-This is a template to create a wordpress and database service. Ready to go.
+This directory is a collection of docker compose files representing environments
+to use in development. Each environment is stored in a folder and contains
+a `docker-compose.yml` file.
 
-To use it, create a symlink from your project folder to the `docker-compose.yml` file
-in this directory. Then, run `docker-compose up -d` to start the wordpress instance and
-`docker-compose down` to stop it.
+To use the environment in your project, create a symlink to the desired
+`docker-compose.yml` file and run `docker-compose up -d` to start it.
+To stop the environment run `docker-compose down`.
+
