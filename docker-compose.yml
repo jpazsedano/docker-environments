@@ -1,0 +1,23 @@
+version: "3.3"
+
+volumes:
+    db-data:
+
+services:
+    wordpress:
+        image: wordpress
+        # Check that this works with environment variables.
+        environment:
+            - WP_DEBUG=true
+            - WP_DEBUG_LOG=true
+            - WP_DEBUG_DISPLAY=true
+        ports: 
+            - 8080:80
+        depends_on:
+            - database
+    database:
+        image: mariadb
+        environment:
+            - MYSQL_ROOT_PASSWORD=root
+        volumes:
+            - db-data:/var/lib/mysql
